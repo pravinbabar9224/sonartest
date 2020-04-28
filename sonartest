@@ -18,3 +18,12 @@ stage("Quality Gate") {
     }
   }
 }
+stage("Slack Notification"){
+    slackSend baseUrl: 'https://hooks.slack.com/services/', 
+    channel: '#jenkins-integration-sonarqube', 
+    color: 'good', 
+    message: 'Hello', 
+    teamDomain: 'cloudmonster', 
+    tokenCredentialId: 'new-webhook'
+}
+
