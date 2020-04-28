@@ -3,7 +3,7 @@ node {
     git 'https://github.com/pravinbabar9224/sonartest.git'
   }
   stage('build & SonarQube Scan') {
-    withSonarQubeEnv('My SonarQube Server') {
+    withSonarQubeEnv('SonarQube-Server') {
       sh 'mvn clean package sonar:sonar'
     } // SonarQube taskId is automatically attached to the pipeline context
   }
